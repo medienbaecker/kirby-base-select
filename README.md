@@ -2,7 +2,7 @@
 
 A drop-in replacement for the [Kirby](https://getkirby.com/) select field. Every option can show an icon or image, a second line of info, its own font and a colour theme, in the field, in its dropdown and in structure and object tables.
 
-<img src=".github/status.png" width="755" alt="The open dropdown with an icon and a line of info on every option.">
+<img src=".github/image.png" width="755" alt="Options with page images as thumbnails.">
 
 ## Installation
 
@@ -39,9 +39,9 @@ status:
 - `font`: a CSS font family; `mono` and `sans-serif` use the Panel fonts
 - `theme`: a Panel theme like `positive`, `negative` or `blue`, which colours the icon
 
-<img src=".github/images.png" width="755" alt="Options with page images as thumbnails.">
+<img src=".github/status.png" width="755" alt="Options with an icon and a line of info.">
 
-<img src=".github/fonts.png" width="755" alt="Options shown in their own font.">
+<img src=".github/font.png" width="755" alt="Options shown in their own font.">
 
 Structure and object tables show the same icon, image, info and font:
 
