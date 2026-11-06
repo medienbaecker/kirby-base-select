@@ -1,0 +1,11 @@
+{
+  "name": "kirby-select",
+  "private": true,
+  "scripts": {
+    "dev": "kirbyup src/index.js --watch",
+    "build": "kirbyup src/index.js"
+  },
+  "devDependencies": {
+    "kirbyup": "^4.0.0-beta.1"
+  }
+}
