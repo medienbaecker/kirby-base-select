@@ -12,6 +12,7 @@
 			<k-tag
 				:icon="tag.icon"
 				:image="tag.image"
+				:class="{ 'k-select-field-preview-icon': tag.icon && !tag.image }"
 				:style="{ fontFamily: tag.font }"
 				theme="light"
 				element="div"
@@ -49,6 +50,9 @@ export default {
 }
 .k-select-field-preview li[data-theme] .k-tag {
 	--tag-color-icon: var(--select-field-preview-icon-color);
+}
+.k-select-field-preview-icon .k-tag-text {
+	padding-inline-start: var(--spacing-1);
 }
 .k-select-field-preview-info {
 	color: var(--color-text-dimmed);
