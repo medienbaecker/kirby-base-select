@@ -1,9 +1,9 @@
 <?php
 
 use Kirby\Cms\App as Kirby;
-use Medienbaecker\Select\OptionsApi;
-use Medienbaecker\Select\OptionsQuery;
-use Medienbaecker\Select\SelectField;
+use Medienbaecker\BaseSelect\OptionsApi;
+use Medienbaecker\BaseSelect\OptionsQuery;
+use Medienbaecker\BaseSelect\SelectField;
 
 load([
 	OptionsApi::class   => 'lib/OptionsApi.php',
@@ -11,7 +11,7 @@ load([
 	SelectField::class  => 'lib/SelectField.php'
 ], __DIR__);
 
-Kirby::plugin('medienbaecker/select', [
+Kirby::plugin('medienbaecker/base-select', [
 	'fields' => [
 		'select' => SelectField::class
 	]

@@ -1,6 +1,6 @@
 <?php
 
-namespace Medienbaecker\Select;
+namespace Medienbaecker\BaseSelect;
 
 use Kirby\Cms\ModelWithContent;
 use Kirby\Option\Options;

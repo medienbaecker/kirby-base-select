@@ -1,4 +1,4 @@
-# Kirby Select
+# Kirby Base Select
 
 A drop-in replacement for the [Kirby](https://getkirby.com/) select field. Every option can show an icon or image, a second line of info, its own font and a colour theme, in the field, in its dropdown and in structure and object tables.
 
@@ -7,10 +7,10 @@ A drop-in replacement for the [Kirby](https://getkirby.com/) select field. Every
 ## Installation
 
 ```bash
-composer require medienbaecker/kirby-select
+composer require medienbaecker/kirby-base-select
 ```
 
-Requires Kirby 6+ and PHP 8.3+. Without Composer, download this repository and copy it to `site/plugins/kirby-select`.
+Requires Kirby 6+ and PHP 8.3+. Without Composer, download this repository and copy it to `site/plugins/kirby-base-select`.
 
 ## Usage
 

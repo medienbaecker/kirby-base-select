@@ -1,5 +1,5 @@
 {
-	"name": "medienbaecker/kirby-select",
+	"name": "medienbaecker/kirby-base-select",
 	"description": "A select field for the Kirby Panel with icons, images, info, fonts and themes on every option",
 	"license": "MIT",
 	"type": "kirby-plugin",

@@ -1,5 +1,5 @@
 {
-  "name": "kirby-select",
+  "name": "kirby-base-select",
   "private": true,
   "scripts": {
     "dev": "kirbyup src/index.js --watch",
