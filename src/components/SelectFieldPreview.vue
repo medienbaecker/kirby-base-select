@@ -8,12 +8,12 @@
 		]"
 		:style="$attrs.style"
 	>
-		<li v-for="tag in tags" :key="tag.value">
+		<li v-for="tag in tags" :key="tag.value" :data-theme="tag.theme">
 			<k-tag
 				:icon="tag.icon"
 				:image="tag.image"
 				:style="{ fontFamily: tag.font }"
-				:theme="tag.theme ?? 'light'"
+				theme="light"
 				element="div"
 			>
 				{{ tag.text }}
@@ -44,6 +44,12 @@ export default {
 </script>
 
 <style>
+.k-select-field-preview li[data-theme] {
+	--select-field-preview-icon-color: var(--theme-color-icon);
+}
+.k-select-field-preview li[data-theme] .k-tag {
+	--tag-color-icon: var(--select-field-preview-icon-color);
+}
 .k-select-field-preview-info {
 	color: var(--color-text-dimmed);
 }
