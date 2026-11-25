@@ -20,16 +20,18 @@ class SelectField extends CoreSelectField
 	#[Prop]
 	protected string|null $placeholderIcon = null;
 
-	protected function fetchOptions(): array
+	protected array $optionSettings = [];
+	protected array $optionExtras   = [];
+
+	protected function fieldOptions(): FieldOptions
 	{
 		$props   = FieldOptions::polyfill(['options' => $this->options ?? []]);
 		$options = $props['options'];
-		$extras  = [];
 
 		if (($options['type'] ?? null) === 'array') {
 			foreach ($options['options'] as $key => $option) {
 				if (is_array($option) === true && array_key_exists('value', $option) === true) {
-					$extras[$option['value']] = $this->extras($option);
+					$this->optionExtras[$option['value']] = $this->extras($option);
 
 					foreach (static::EXTRAS as $name) {
 						unset($options['options'][$key][$name]);
@@ -38,17 +40,26 @@ class SelectField extends CoreSelectField
 			}
 		}
 
+		$this->optionSettings = $options;
+
 		$provider = match ($options['type'] ?? null) {
 			'api'   => OptionsApi::factory($options),
 			'query' => OptionsQuery::factory($options),
 			default => Options::factory($options['options'] ?? [])
 		};
 
-		$rendered = (new FieldOptions($provider, false))->render($this->model());
+		return new FieldOptions($provider, safeMode: false);
+	}
+
+	public function options(): array
+	{
+		$rendered = parent::options();
+		$extras   = $this->optionExtras;
+		$provider = $this->optionsCache->options;
 
 		if ($provider instanceof Options === false) {
 			foreach ($provider->items as $value => $data) {
-				$extras[$value] = $this->extras($options, $data);
+				$extras[$value] = $this->extras($this->optionSettings, $data);
 			}
 		}
 
